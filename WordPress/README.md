@@ -12,7 +12,7 @@ The <em>*["lift and shift"](https://www.ibm.com/topics/lift-and-shift)*</em> str
     <li><em>Cloud Watch</em>to provide easy rules through alarms to scale in and out based on requirements.
 </ul>
 
-The choice for 
+The choice of using *[Red Hat Entrerprise Linux instances](https://www.redhat.com/it/technologies/linux-platforms/enterprise-linux/why-choose-red-hat-enterprise-linux-on-aws)* as AMI is necessary for a production environment and for its scalability on AWS.
 
 ## Back-end
 <ul>
@@ -21,5 +21,3 @@ The choice for
     <li><em>Route 53</em> as DNS to resolve the webapp URL searched by the users to the CloudFront endpoint which will cache the webapp contents.</li>
     <li><em>CLOUDFRONT</em> as content delivery network due to it's conveninience with global audience. This helps to reduce latency and distribute the app around the world.</li>
 </ul>
-
-The choice of using *[Red Hat Entrerprise Linux instances](https://www.redhat.com/it/technologies/linux-platforms/enterprise-linux/why-choose-red-hat-enterprise-linux-on-aws)* as AMI is necessary for a production environment and for its scalability on AWS.
