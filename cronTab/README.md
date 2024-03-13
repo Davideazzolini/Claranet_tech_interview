@@ -8,7 +8,7 @@ La soluzione prevede due script:
     <li><em>backup.sh</em> genera l'archivio compresso del contenuto del percorso /home/user e lo invia verso l'host remoto</li>
 </ul>
 
-La stringa cronTab scelta <code>0 1 * * SUN</code>, indica che ogni domenica all'una di notte  viene eseguito lo script.
+La stringa cronTab scelta <code>0 1 * * MON</code>, indica che ogni domenica all'una di notte  viene eseguito lo script.
 
 Immaginando che il percorso di salvataggio del backup sia **/home**, con il comando *[zip](https://linux.die.net/man/3/zip)* genero l'archivio compresso del contenuto della cartella e con l'utilizzo della primitiva *[scp](https://man7.org/linux/man-pages/man1/scp.1.html)* é possibile fare una copia sull' host remoto.
 
