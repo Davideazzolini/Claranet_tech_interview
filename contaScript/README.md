@@ -1,22 +1,22 @@
 # ContaScript
 
-**passato il percorso della cartella, cerca in essa e nelle eventuali sotto cartelle tutti gli script e conta le occorrenze degli shabang.**
+**Given the folder path, search in it and in any sub-folders for all scripts and count the occurrences of shabangs.**
 
- Per trovare i file script é possibile lanciare il comando [find](https://man7.org/linux/man-pages/man1/find.1.html) che restituisce la lista di tutti i file al perocrso passato come parametro.
- Tramite la flag *-exec* é possibile rielaborare il risultato della primitiva.
+ To find the script files, you can run the command [find](https://man7.org/linux/man-pages/man1/find.1.html) which returns the list of all files at the path passed as parameter.
+ Using the *-exec* flag, it is possible to reprocess the result of the primitive.
 
- Iterando sulla lista usando il comando [file](https://man7.org/linux/man-pages/man1/file.1.html) con l'uso delle flag:
+ Looping on the list using the command [file](https://man7.org/linux/man-pages/man1/file.1.html) with the flags:
  <ul>
-  <li><em>-b</em> : non antepone il nome nell'output </li>
-  <li><em>--mime</em> : stampa brevissimo testo sulla descrizione del tipo del file </li>
+  <li><em>-b</em> : does not prepend the name in the output, </li>
+  <li><em>--mime</em> : prints a very short text on the file type description, </li>
  </ul>
- é possibile confrontare la descrizione con la stringa regex che impone al tipo di essere uno script eseguibile per via della 'x'.
+ it is possible to compare the description with the regex string that requires the type to be an executable script because of the 'x'.
 
- Se ad esempio si usa il comando:
+ If, for example, the command:
 
  <code> file -b --mime contaScript.sh </code>
 
- Il risultato sarà: **"text/x-shellscript; charset=utf-8"**
+ It will result in: **"text/x-shellscript; charset=utf-8"**
 
- Leggo da ogni prima riga lo shabang e lo scrivo in occurences.txt (file temporaneo).
- Ordinando in ordine alfabetico il file temporaneo (sort) e contando le occorrenze delle singole shebang si arriva al risultato.
+ I read from each first line the shabang and write it into occurences.txt (temporary file).
+ Sorting the temporary file alphabetically (sort) and counting the occurrences of the individual shebangs leads to the result.
