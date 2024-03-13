@@ -1,16 +1,16 @@
 # cronTab
 
-**La stringa crontab ogni domenica notte crea un backup della cartella /home/user e lo invia al un server remoto**
+**The string crontab every Sunday night creates a backup of the /home/user folder and sends it to a remote server**
 
-La soluzione prevede due script:
+The solution involves two scripts:
 <ul>
-    <li><em>crontab.sh</em> schedula l'esecuzione dello script di backup tramite la stringa cron </Li>
-    <li><em>backup.sh</em> genera l'archivio compresso del contenuto del percorso /home/user e lo invia verso l'host remoto</li>
+    <li><em>crontab.sh</em> schedules the execution of the backup script via the cron string, </Li>
+    <li><em>backup.sh</em> generates the compressed archive of the contents of the /home/user path and sends it to the remote host. </li>
 </ul>
 
-La stringa cronTab scelta <code>0 1 * * MON</code>, indica che ogni Lunedì all'una di notte  viene eseguito lo script.
+The chosen cronTab string <code>0 1 * * MON</code>, indicates that every Monday at 1 a.m. the script is executed.
 
-Immaginando che il percorso di salvataggio del backup sia **/home**, con il comando *[zip](https://linux.die.net/man/3/zip)* genero l'archivio compresso del contenuto della cartella e con l'utilizzo della primitiva *[scp](https://man7.org/linux/man-pages/man1/scp.1.html)* é possibile fare una copia sull' host remoto.
+Assuming that the backup save path is **/home**, with *[zip](https://linux.die.net/man/3/zip)* I generate the compressed archive of the folder's contents and using the primitive *[scp](https://man7.org/linux/man-pages/man1/scp.1.html)* it is possible to make a copy on the remote host.
 
-La configurazione necessaria richiede una coppia di chiavi pubblica-privata per la connessione ssh, dove l'host che si connette avrà necessità di possedere quella **pubblica**, l'host remoto (192.168.1.100) quella privata.
+The necessary configuration requires a public-private key pair for the ssh connection, where the connecting host will need to have the **public** one, the remote host (192.168.1.100) the private one.
 
